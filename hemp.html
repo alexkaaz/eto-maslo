@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+	    <title>Интернет магазин "eto-maslo"</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Rubik:wght@600&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="hemp-style.css">
+        <script src="https://api-maps.yandex.ru/v3/?apikey=d7aa06de-fa06-4b23-a0a5-7ed6c0bb9aa4&lang=ru_RU"></script>
+        
+    </head> 
+    <body>
+         
+        <header>
+            <section class="menu-bar"  id="header">
+                <nav class="fixed-container">
+                    <div class="logo">
+                        <a href="etomaslo.html" class="header-link">MASLO</a>
+                    </div>
+                    <div class="menu-block">
+                        <ul>
+                            <li><a href="etomaslo.html" class="header-link">Каталог</a></li>
+                            <li><a href="etomaslo.html" class="header-link">О нас</a></li>
+                            <li><a href="etomaslo.html" class="header-link">Контакты</a></li>
+                            <li><a href="etomaslo.html" class="header-link">Производство</a></li>
+                        </ul>
+                    </div>
+                    <div class="registration">
+                        <a href="">Вход</a>
+                        <a href="">/ Регистрация</a>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main>
+            
+            <button type="button" class="cart-button js-cart-button">
+                <svg class="bag-icon" enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="m32.32.05c-5.94 0-10.77 4.83-10.77 10.77v3.99h-14.12v49.13h49.13v-49.13h-13.47v-3.99c0-5.94-4.83-10.77-10.77-10.77zm-7.84 10.77c0-4.32 3.52-7.84 7.84-7.84s7.84 3.52 7.84 7.84v3.99h-15.68zm29.15 6.92v43.27h-43.26v-43.27h11.18 21.54z" fill="#000000" style="fill: rgb(0, 0, 0);"></path>
+                    </g>
+                </svg>
+            </button>
+           
+            <div class="overlay js-overlay js-close-cart">
+            </div> 
+            <div class="cart js-cart">
+                <button type="button" class="close-button js-close-cart">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.11 2.697L2.698 4.11 6.586 8l-3.89 3.89 1.415 1.413L8 9.414l3.89 3.89 1.413-1.415L9.414 8l3.89-3.89-1.415-1.413L8 6.586l-3.89-3.89z" fill="#000"></path>
+                    </svg>
+                </button>
+                <div class="empty-cart cart-empty-container">
+                    <div>
+                        <svg style="fill:grey;" enable-background="new 0 0 96 96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m36 68h40c.85 0 1.607-.537 1.888-1.339l14-40c.214-.612.118-1.289-.257-1.818s-.983-.843-1.631-.843h-64.876l-4.292-12.018c-.851-2.382-3.122-3.982-5.651-3.982h-9.181c-1.104 0-2 .896-2 2s.896 2 2 2h9.181c.843 0 1.6.534 1.884 1.328l18.112 50.715c-4.026.413-7.177 3.824-7.177 7.957 0 4.411 3.589 8 8 8h2.082c-.684 1.178-1.082 2.542-1.082 4 0 4.411 3.589 8 8 8s8-3.589 8-8c0-1.458-.398-2.822-1.082-4h12.165c-.685 1.178-1.083 2.542-1.083 4 0 4.411 3.589 8 8 8s8-3.589 8-8-3.589-8-8-8h-35c-2.206 0-4-1.794-4-4s1.794-4 4-4zm31.228-17h-8.228v-10h9.728zm5.544-10h9.859l-3.5 10h-7.859zm-13.772 14h7.628l-1.35 9h-6.278zm-4 9h-6.277l-1.35-9h7.627zm4-27v-9h11.678l-1.35 9zm-4 0h-10.327l-1.35-9h11.677zm0 4v10h-8.227l-1.5-10zm-12.273 10h-7.961l-3.571-10h10.032zm.6 4 1.35 9h-5.268l-3.214-9zm31.254 9h-5.259l1.35-9h7.059zm9.45-27h-10.659l1.35-9h12.459zm-44.754-9 1.35 9h-10.86l-3.214-9zm9.723 56c0 2.206-1.794 4-4 4s-4-1.794-4-4 1.794-4 4-4 4 1.794 4 4zm26 0c0 2.206-1.794 4-4 4s-4-1.794-4-4 1.794-4 4-4 4 1.794 4 4z"/>
+                        </svg>
+                    </div>
+                    <div style="color:grey;" class="empty-cart-text">Ваша корнзина пуста</div>
+                </div>
+
+                <div class="cart-order-container">
+                    <ul class="cart-list js-cart-list">
+                    
+                    </ul>
+                    <div class="cart-buy-section">
+                        <div>Итоговая цена: </div>
+                        <span class="js-cart-total-price">1350</span>
+                        <span>Р.</span>
+                        <button>Оформить заказ</button>
+                    </div>
+                </div>
+            </div> 
+
+            <section class="header-info">
+                <div class="info-block">
+                    <div class="company_name">
+                        Maslo
+                    </div>
+                    <div class="header_oil_name">
+                        Конопляное масло
+                    </div>
+                    <div class="header_oil_info">
+                        <p>Конопляное масло - это хорошая профилактика аденомы простаты.</p>
+                    </div>
+                    <div class="arrow_button_block">
+                        <a href="#product" class="arrow-button">
+                            <svg class="arrow" viewBox="0 0 38.417 18.592">
+                                <g>
+                                    <path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,
+                                    1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,
+                                    1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,
+                                    0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,
+                                    19.449,18.592,19.208,18.592z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="product_card_sec">
+                <div class="product_card_c js-main-product-card">
+                    <div class="product_image_sec">
+                        <div class="slider_c" id="product">
+                            <div class="product_image_c">
+                                <img class="js-image-card" src="img/hemp_oil_img1.png">
+                                <img src="img/hemp_oil_img2.png">
+                                <img src="img/hemp_picture.png">
+                            </div>
+                            <button class="prev_button" type="button" aria-label="Посмотреть предыдущее изображение"></button>
+                            <button class="next_button" type="button" aria-label="Посмотреть следующее изображение"></button>
+                        </div>
+                    </div>
+                    <div class="product_purchase_sec">
+                        <h1 class="js-title-card js-link-card" id="hemp.html">Конопляное масло</h1>
+                        <div class="product_volume js-size-card">330 мл.</div>
+                        <div class="product_price js-price-card">1350р.</div>
+                        <button class="buy_button js-buy-button">Добавить в корзину</button>
+                        <p>Незаслуженно забытое русское масло. Еще во времена Древней Руси масло добавляли в пищу и использовали для поднятия иммунитета. Масло из конопли обладает великолепными полезными свойствами, позволяющими не только питать, но излечивать от болезней человека.<br>
+
+                            <br>Продукт с высоким содержанием йода – это залог правильной работы эндокринной системы. Витамины Е и А, входящие в состав, избавляют от токсинов и продлевают молодость, а магний дарит долголетие сердцу.<br>
+                            
+                            <br>Конопляное масло с зеленым оттенком - из-за высокого содержания хлорофилла, чьи противовоспалительные свойства хорошо помогают при артрите. Хлорофилл невероятно полезен для очищения крови и наполнения клеток кислородом и энергией.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="oil_info_sec">
+                <div class="oil_properties_info">
+                    <div>
+                        <h1>Назначение и свойства льняного масла</h1>
+                        <div><span>Профилактика онкологических заболеваний.</span></div>
+                    </div>
+                    <p>В народной медицине масло используется как эффективное средство лечения онкологических болезней. 
+                        Оказывает противоопухолевое действие. Конопляное масло применяют для лечения:<br>
+                        <br>● Заболеваний верхних дыхательных путей;<br>
+                        ● Кожи: улучшает состояние волос и ногтей, лечит угревую сыпь и снимает раздражения и покраснения. 
+                        При масляных аппликациях ожоги и трещины заживают быстрее;<br>
+                        ● Обмена веществ: нормализует уровень сахара в крови (при соблюдении основ здорового питания), 
+                        устраняет вздутие и запоры;<br>
+                        ● Мышечных болей. Конопляное масло хорошее средство при менструациях;<br>
+                        ● Анемии и истощения;
+                    </p>
+                   
+                </div>
+                <div class="oil_info_footnote">
+                    <div>Для продукта холодного отжима допустим небольшой осадок. 
+                        Не стоит использовать масло при высоких температурах (добавляйте уже в готовое блюдо) и храните в холодильнике.</div>
+                </div>
+                <div class="oil_use_info">
+                    <div><h1>Употребление коноплянного масла</h1></div>
+                    <p>● Конопляное масло используют при лечении инфекций дыхательных путей, страдающих при вспышках Covid-19.<br>
+                       ● Особенность конопляного масла: оно гипоаллергенно. Его можно давать самым маленьким детям, начиная с маленьких дозировок, в лечебных и профилактических целях.<br>
+                       ● Конопляное масло принимают по 1-2 столовой ложки натощак перед едой, запивая теплой водой с лимоном.<br>
+                       ● Также сыродавленное масло можно добавлять в готовые блюда, заправлять салаты и каши, заменив сливочное масло.<br></p>
+                </div>
+            </section>
+            <section class="adress">
+                <div class="adress-block">
+                    <h1>Посетите наш офис и производство</h1>
+                    <p>Наш адрес - Москва, Красная площадь, дом 1</p>
+                    <!-- <div class="location">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0aaa32d65a0b2901df9564218a4cdacdd348211cb2eb628f47acbe9358a2f5c7&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                    </div> -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer">
+                <div class="teg">
+                    <a href="#">© 2022 Maslo</a>
+                </div>
+                <div class="media-block">
+                    <div class="media">
+                        <a href="#"><svg viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM25 39.3918C25 31.4558 31.4566 25 39.3918 25H60.6082C68.5442 25 75 31.4566 75 39.3918V60.8028C75 68.738 68.5442 75.1946 60.6082 75.1946H39.3918C31.4558 75.1946 25 68.738 25 60.8028V39.3918ZM36.9883 50.0054C36.9883 42.8847 42.8438 37.0922 50.0397 37.0922C57.2356 37.0922 63.0911 42.8847 63.0911 50.0054C63.0911 57.1252 57.2356 62.9177 50.0397 62.9177C42.843 62.9177 36.9883 57.1252 36.9883 50.0054ZM41.7422 50.0054C41.7422 54.5033 45.4641 58.1638 50.0397 58.1638C54.6153 58.1638 58.3372 54.5041 58.3372 50.0054C58.3372 45.5066 54.6145 41.8469 50.0397 41.8469C45.4641 41.8469 41.7422 45.5066 41.7422 50.0054ZM63.3248 39.6355C65.0208 39.6355 66.3956 38.2606 66.3956 36.5646C66.3956 34.8687 65.0208 33.4938 63.3248 33.4938C61.6288 33.4938 60.2539 34.8687 60.2539 36.5646C60.2539 38.2606 61.6288 39.6355 63.3248 39.6355Z" fill="#ffffff"></path></svg></a></td>
+                    </div>
+                    <div class="media">
+                        <a href="#"><svg viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"></path></svg></a></td>
+                    </div>
+                </div>
+                <div class="up">
+                    <a href="#header" class="up-link">Наверх</a>
+                </div>
+            </div>
+        </footer>
+        <script src="cartData.js"></script>
+        <script src="cartPopup.js"></script>
+        <script src="smoothscroll.js"></script>
+        <script src="slider.js"></script>
+    </body>
+</html>

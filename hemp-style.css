@@ -1,0 +1,532 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', 'Aril', 'sans-serif';
+    font-weight: 300;
+    
+}
+
+button {
+    cursor: pointer;
+}
+@font-face {
+    font-family: 'Roboto Condensed', 'Aril', 'sans-serif';
+    src: url(fonts/RobotoCondensed-Italic-VariableFont_wght.ttf);
+}
+a {
+    text-decoration: none;
+}
+.menu-bar{
+    height: 90px;
+    background-color: #ccc683;
+    width: 100%;
+    
+}
+
+.fixed-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-link {
+    color: #fff;
+}
+
+.logo {
+    margin-left: 75px;
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+.menu-block {
+    flex: 1;
+    text-align: right;
+    margin-top: 25px;
+    margin-right: 65px;
+}
+
+.menu-block ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: 20px;
+    color: #fff;
+    padding-right: 25px;
+}
+
+.registration {
+    margin-top: 25px;
+    margin-right: 40px;
+    font-size: 20px;
+}
+
+.registration a {
+    color: #fff;
+}
+
+.cart-button {
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    z-index: 100;
+    margin-top: 20px;
+    margin-right: 35px;
+    right: 0;
+    border: none;
+    border-radius: 50px;
+    background-color: #B5B8B1;
+}
+
+.bag-icon {
+    margin: 15px;
+    width: 40px
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    display: none;
+    z-index: 100;
+    transition: background-color .2s;
+}
+
+.overlay.active {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cart {
+    background-color: #e6e6e6;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    min-height: 100vh;
+    max-width: 100vh;
+    transition: right .2s ease-in-out;
+    z-index: 100;
+
+}
+
+.cart.active {
+    right: 0;
+    transition: right .2s ease-in-out;
+}
+
+.close-button {
+    background-color: #e6e6e6;
+    border: none;
+    width: 25px;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.empty-cart {
+    width: 250px;
+    margin: 150px auto 0;
+}
+
+.empty-cart-text {
+    width: max-content;
+    font-size: 26px;
+    margin-left: 25px;
+}
+
+.cart-list {
+    list-style: none;
+}
+
+.cart-product-card {
+    
+    width: 100%;
+    padding: 25px 0 15px 10px;
+    margin: 20px 0 ;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+}
+
+.cart-product-card button {
+    border: none;
+    background-color: #e6e6e6;
+}
+
+.cart-product-img {
+    display: inline-block;
+}
+
+.cart-product-img img {
+    border: 1px solid black;
+    height: 150px;
+}
+
+.cart-product-info {
+    margin-left: 20px;
+    width: 310px;
+    height: 100%;
+    display: inline-block;
+    vertical-align:top;
+}
+
+
+.cart-product-name h1 {
+    font-size: 20px;
+}
+
+.cart-product-size {
+    display: block;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.js-cart-price {
+    
+    font-weight: 600;
+    margin-top: 20px;
+}
+.currency {
+    
+    font-weight: 600;
+}
+
+.cart-counter {
+    margin-top: 30px;
+    display: flex;
+}
+
+.cart-counter * {
+    display: inline-block;
+}
+
+.plus-btn {
+    font-size: 28px;
+    background-color: #fff;
+    width: 25px;
+
+}
+.counter {
+    margin: auto 10px;
+}
+.minus-btn {
+    font-size: 46px;
+    background-color: #fff;
+    width: 25px;
+}
+
+.item-delete {
+    display: inline-block;
+    width: 20px;
+    vertical-align:top;
+    left: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.cart-buy-section {
+    position: fixed;
+    bottom: 0;
+    width: 500px;
+    border-top: 1px solid;
+    padding: 30px 0;
+    
+    
+}
+
+.cart-buy-section * {
+    display: inline-block;
+}
+
+.cart-buy-section div {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 15px 20px 0 15px;
+}
+
+.cart-buy-section button {
+    position:relative;
+    float:right;
+    margin-right: 15px;
+    font-size: 18px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #8f6938;
+    color: #fff;
+}
+
+.header-info {
+    width: 100%;
+    height: 660px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/backgroundhemp.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+.info-block {
+    height: 100%;
+    width: max-content;
+    text-align: center;
+    margin: auto;
+    color: #fff;
+}
+.company_name {
+    padding-top: 150px;
+    font-size: 14px;
+}
+.header_oil_name {
+    padding-top: 100px;
+    font-size: 56px;
+}
+
+.header_oil_info {
+    padding-top: 35px;
+    font-size: 18px;
+}
+ 
+.arrow_button_block{ 
+    position: absolute;
+    bottom: 0;
+    left: 48.5%;
+    margin-bottom: 15px;
+    width: max-content;
+}
+
+.arrow-button {
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    box-sizing: content-box;
+    fill: #ededed;
+}
+.arrow {
+    animation: move 2s ease-in-out infinite;
+    transform-origin: center;
+    fill:#ededed;
+    y: 0px; 
+    width: 38.417px; 
+    height: 18.592px; 
+
+}
+@keyframes move {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-10px); 
+}
+100% {
+    transform: translateY(0);
+}
+}
+
+.product_card_sec {
+    display: flex;
+    width: 55%;
+    margin: 30px auto;
+}
+
+.product_image_sec {
+    display: inline-block;
+    width: 49.9%;
+}
+
+.slider_c {
+    position: relative;
+    max-width: max-content;
+    margin: auto;
+    overflow: hidden;
+}
+
+.product_image_c {
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.product_image_c img {
+    width: 99.9%;
+    object-fit: cover;
+    display: block;
+}
+
+.product_purchase_sec {
+    width: 50%;
+}
+
+.slider_c button {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.prev_button {
+    left: 0;
+}
+
+.next_button {
+    right: 0;
+}
+
+.product_purchase_sec {
+    padding-left: 25px;
+    display: inline-block;
+    vertical-align:top; 
+    width: 46%;
+}
+
+.product_purchase_sec h1 {
+    font-weight: 900;
+    top: 0;
+}
+
+.product_volume {
+    padding-top: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+.product_price {
+    padding-top: 15px;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.buy_button {
+    height: 40px;
+    width: 150px;
+    border-radius: 30px;
+    border: none;
+    margin: 25px 0;
+    background-color: #8f6938;
+    color: #fff;
+}
+
+.oil_info_sec {
+    width: 100%;
+}
+
+.oil_properties_info {
+    width: 40%;
+    margin: 0 auto 50px;
+}
+
+.oil_properties_info div {
+    width: max-content;
+    margin: 0 auto;
+}
+.oil_properties_info div h1{
+    font-size: 26px;
+    font-weight: 550;
+}
+
+.oil_properties_info div div {
+    width: max-content;
+    margin: 10px auto 50px;
+}
+.oil_properties_info div div span {
+    font-size: 20px;
+}
+
+.oil_properties_info p {
+    font-size: 18px;
+}
+
+.oil_info_footnote {
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-bottom: 30px;
+    background-color: #8f6938;
+}
+.oil_info_footnote div {
+    width: 54%;
+    height: 100px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.oil_use_info {
+    width: 40%;
+    margin: 0 auto 50px;
+}
+
+.oil_use_info div {
+    width: max-content;
+    margin: 0 auto 90px;
+}
+.oil_use_info div h1{
+    font-size: 26px;
+    font-weight: 550;
+}
+
+.oil_use_info p{
+    font-size: 18px;
+}
+
+.adress-block {
+    display: block;
+    justify-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.adress-block h1 {
+    font-size: 30px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+.adress-block p {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 45px;
+}
+.location {
+    width: 950px;
+    height: 300px;
+}
+.footer {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: #ccc683;
+}
+.footer a {
+    color: #fff;
+}
+
+.teg {
+    margin: 20px auto 0 30px;
+}
+
+.media-block {
+    margin: 20px auto 0 auto ;
+}
+
+.media {
+    display: inline-block;
+    
+}
+.media a svg {
+    height: 30px;
+    width: 30px;
+    fill: none;
+}
+ 
+.up {
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-left: auto;
+}

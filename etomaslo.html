@@ -8,10 +8,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Rubik:wght@600&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="etomaslo-style.css">
+        <script src="https://api-maps.yandex.ru/v3/?apikey=d7aa06de-fa06-4b23-a0a5-7ed6c0bb9aa4&lang=ru_RU"></script>
+        
     </head> 
     <body>
         <header>
-            <section class="menu-bar">
+            <section class="menu-bar"  id="header">
                 <nav class="fixed-container">
                     <div class="logo">
                         <a href="etomaslo.html" class="header-link">MASLO</a>
@@ -24,15 +26,234 @@
                             <li><a href="etomaslo.html" class="header-link">Производство</a></li>
                         </ul>
                     </div>
+                    <div class="registration">
+                        <a href="">Вход</a>
+                        <a href="">/ Регистрация</a>
+                    </div>
                 </nav>
-            </section>
-            <section class="header-info">
-                <div class="info">
-                </div>
             </section>
         </header>
         <main>
+            <button type="button" class="cart-button js-cart-button">
+                <svg class="bag-icon" enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="m32.32.05c-5.94 0-10.77 4.83-10.77 10.77v3.99h-14.12v49.13h49.13v-49.13h-13.47v-3.99c0-5.94-4.83-10.77-10.77-10.77zm-7.84 10.77c0-4.32 3.52-7.84 7.84-7.84s7.84 3.52 7.84 7.84v3.99h-15.68zm29.15 6.92v43.27h-43.26v-43.27h11.18 21.54z" fill="#000000" style="fill: rgb(0, 0, 0);"></path>
+                    </g>
+                </svg>
+            </button>
+            <div class="overlay js-overlay js-close-cart"></div>
+            <div class="cart js-cart">
+                <button type="button" class="close-button js-close-cart">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.11 2.697L2.698 4.11 6.586 8l-3.89 3.89 1.415 1.413L8 9.414l3.89 3.89 1.413-1.415L9.414 8l3.89-3.89-1.415-1.413L8 6.586l-3.89-3.89z" fill="#000"></path>
+                    </svg>
+                </button>
+                <div class="empty-cart">
+                    <div>
+                        <svg enable-background="new 0 0 96 96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m36 68h40c.85 0 1.607-.537 1.888-1.339l14-40c.214-.612.118-1.289-.257-1.818s-.983-.843-1.631-.843h-64.876l-4.292-12.018c-.851-2.382-3.122-3.982-5.651-3.982h-9.181c-1.104 0-2 .896-2 2s.896 2 2 2h9.181c.843 0 1.6.534 1.884 1.328l18.112 50.715c-4.026.413-7.177 3.824-7.177 7.957 0 4.411 3.589 8 8 8h2.082c-.684 1.178-1.082 2.542-1.082 4 0 4.411 3.589 8 8 8s8-3.589 8-8c0-1.458-.398-2.822-1.082-4h12.165c-.685 1.178-1.083 2.542-1.083 4 0 4.411 3.589 8 8 8s8-3.589 8-8-3.589-8-8-8h-35c-2.206 0-4-1.794-4-4s1.794-4 4-4zm31.228-17h-8.228v-10h9.728zm5.544-10h9.859l-3.5 10h-7.859zm-13.772 14h7.628l-1.35 9h-6.278zm-4 9h-6.277l-1.35-9h7.627zm4-27v-9h11.678l-1.35 9zm-4 0h-10.327l-1.35-9h11.677zm0 4v10h-8.227l-1.5-10zm-12.273 10h-7.961l-3.571-10h10.032zm.6 4 1.35 9h-5.268l-3.214-9zm31.254 9h-5.259l1.35-9h7.059zm9.45-27h-10.659l1.35-9h12.459zm-44.754-9 1.35 9h-10.86l-3.214-9zm9.723 56c0 2.206-1.794 4-4 4s-4-1.794-4-4 1.794-4 4-4 4 1.794 4 4zm26 0c0 2.206-1.794 4-4 4s-4-1.794-4-4 1.794-4 4-4 4 1.794 4 4z"/>
+                        </svg>
+                    </div>
+                    <div class="empty-cart-text">Ваша корнзина пуста</div>
+                </div>
+            </div>
+            <section class="header-info">
+                <div class="info-block">
+                    <div>
+                        <div class="hello-text">
+                            Добро пожаловать в мир Maslo!
+                        </div>
+                        <div class="string"></div>
+                        <div class="info-text">
+                            <p>Мы делаем сыродавленное органическое масло холодного отжима. Масло давится на ручных 
+                                прессах без температурной обработки.Продукт получается насыщенный витаминами и 
+                                аминокислотами, вкусный и полезный.</p>
+                        </div>
+                        <div style="position: absolute; bottom: 0; margin-bottom: 15px; width: 750px">
+                            <a href="#about" class="arrow-button">
+                                <svg class="arrow" viewBox="0 0 38.417 18.592">
+                                    <g>
+                                        <path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,
+                                        1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,
+                                        1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,
+                                        0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,
+                                        19.449,18.592,19.208,18.592z"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>    
+            <section class="about">
+                <img id="about" src="img/about.jpg" class="about-img">
+                <div class="about-block">
+                    <nav>
+                        <h1>О нас</h1>
+                        <p class="short-info">Отжимается масло маленькими партиями, семейное производство, внимание к каждой бутылочке.</p>
+                        <div class="about-link">
+                            <a href="#">К нашей истории</a>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+            <section class="catalog">
+                <h1>Наши хиты</h1>
+                <nav>
+                    <div>
+                        <table class="catalog-table">
+                            <td>
+                                <a href="#">
+                                    <div  class="catalog-list">
+                                        <div class="slider" id="flaxSlider">
+                                            <img class="oil-img" src="img/flax_oil_img1.jpg" alt="picture 1">
+                                            <img src="img/hemp_oil_img2.jpg"  alt="picture 2">
+                                        </div>
+                                        <script>
+                                            const flax = document.querySelectorAll('#flaxSlider img');
+                                            let flaxIndex = 0;
+                                            function showNextFlax() {
+                                                flax[flaxIndex].classList.remove('oil-img');
+                                                flaxIndex = (flaxIndex + 1) % flax.length;
+                                                flax[flaxIndex].classList.add('oil-img');
+                                            } 
+                                            const flaxslider = document.querySelector('#flaxSlider');
+                                            flaxslider.addEventListener('mouseenter', () => {
+                                                isHovering = true; 
+                                                showNextFlax(); 
+                                            });
+                                            flaxslider.addEventListener('mouseleave', () => {
+                                                isHovering = false;
+                                                showNextFlax();
+                                            });                                           
+                                        </script>
+                                        <div class="oil-name">
+                                            Льняное сыродавленое масло 
+                                        </div>
+                                        <div class="oil-size">
+                                            330 мл.
+                                        </div>
+                                        <div class="price">
+                                            550 руб.                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#">
+                                    <div  class="catalog-list" >
+                                        <div class="slider" id="pumpkinSlider">
+                                            <img class="oil-img" id="pumpkin" src="img/pumpkin_oil_img1.jpg" alt="picture 1">
+                                            <img src="img/hemp_oil_img2.jpg" id="pumpkin" alt="picture 2">
+                                        </div>
+                                        <script>
+                                            const pumpkin = document.querySelectorAll('#pumpkinSlider img');
+                                            let pumpkinIndex = 0;
+                                            function showNextPumpkin() {
+                                                pumpkin[pumpkinIndex].classList.remove('oil-img');
+                                                pumpkinIndex = (pumpkinIndex + 1) % pumpkin.length;
+                                                pumpkin[pumpkinIndex].classList.add('oil-img');
+                                            }
+                                            const pumpkinslider = document.querySelector('#pumpkinSlider');
+                                            pumpkinslider.addEventListener('mouseenter', () => {
+                                                isHovering = true; 
+                                                showNextPumpkin(); 
+                                            });
+                                            pumpkinslider.addEventListener('mouseleave', () => {
+                                                isHovering = false;
+                                                showNextPumpkin();
+                                            });
+                                        </script>
+                                    </div>
+                                        
+                                        <div class="oil-name">
+                                            Тыквенное масло
+                                        </div>
+                                        <div class="oil-size">
+                                            330 мл.
+                                        </div>
+                                        <div class="price">
+                                            90 руб.                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="hemp.html">
+                                    <div  class="catalog-list">
+                                        <div class="slider" id="hempSlider">
+                                            <img class="oil-img" id="hemp" src="img/hemp_oil_img1.jpg" alt="picture 1">
+                                            <img src="img/hemp_oil_img2.jpg" alt="picture 2">
+                                        </div>
+                                        <script>
+                                            const hemp = document.querySelectorAll('#hempSlider img');
+                                            let hempIndex = 0;
+                                            function showNextHemp() {
+                                                hemp[hempIndex].classList.remove('oil-img');
+                                                hempIndex = (hempIndex + 1) % hemp.length;
+                                                hemp[hempIndex].classList.add('oil-img');
+                                            }
+                                            const hempslider = document.querySelector('#hempSlider');
+                                            hempslider.addEventListener('mouseenter', () => {
+                                                isHovering = true; 
+                                                showNextHemp(); 
+                                            });
+                                            hempslider.addEventListener('mouseleave', () => {
+                                                isHovering = false;
+                                                showNextHemp();
+                                            });
+
+                                        </script>
+                                        <div class="oil-name">
+                                            Коноплянное масло
+                                        </div>
+                                        <div class="oil-size">
+                                            330 мл.
+                                        </div>
+                                        <div class="price">
+                                            108 руб.                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                        </table>
+                    </div>
+                </nav>
+            </section>
+            <section class="adress">
+                <div class="delivery">
+                    <h1>Maslo c доставкой.</h1>
+                    <p>Мы осуществляем доставку по Москве и Московской области, а также можем выслать заказ почтой по всей территории России. Стоимость доставки: от 500 рублей и выше, в зависимости от веса партии.</p>
+                </div>
+                <div class="adress-block">
+                    <h1>Посетите наш офис и производство</h1>
+                    <p>Наш адрес - Москва, Красная площадь, дом 1</p>
+                    <div class="location">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0aaa32d65a0b2901df9564218a4cdacdd348211cb2eb628f47acbe9358a2f5c7&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer>
+            <div class="footer">
+                <div class="teg">
+                    <a href="#">© 2022 Maslo</a>
+                </div>
+                <div class="media-block">
+                    <div class="media">
+                        <a href="#"><svg viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM25 39.3918C25 31.4558 31.4566 25 39.3918 25H60.6082C68.5442 25 75 31.4566 75 39.3918V60.8028C75 68.738 68.5442 75.1946 60.6082 75.1946H39.3918C31.4558 75.1946 25 68.738 25 60.8028V39.3918ZM36.9883 50.0054C36.9883 42.8847 42.8438 37.0922 50.0397 37.0922C57.2356 37.0922 63.0911 42.8847 63.0911 50.0054C63.0911 57.1252 57.2356 62.9177 50.0397 62.9177C42.843 62.9177 36.9883 57.1252 36.9883 50.0054ZM41.7422 50.0054C41.7422 54.5033 45.4641 58.1638 50.0397 58.1638C54.6153 58.1638 58.3372 54.5041 58.3372 50.0054C58.3372 45.5066 54.6145 41.8469 50.0397 41.8469C45.4641 41.8469 41.7422 45.5066 41.7422 50.0054ZM63.3248 39.6355C65.0208 39.6355 66.3956 38.2606 66.3956 36.5646C66.3956 34.8687 65.0208 33.4938 63.3248 33.4938C61.6288 33.4938 60.2539 34.8687 60.2539 36.5646C60.2539 38.2606 61.6288 39.6355 63.3248 39.6355Z" fill="#ffffff"></path></svg></a></td>
+                    </div>
+                    <div class="media">
+                        <a href="#"><svg viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"></path></svg></a></td>
+                    </div>
+                </div>
+                <div class="up">
+                    <a href="#header">Наверх</a>
+                </div>
+            </div>
         </footer>
+        <script src="cartData.js"></script>
+        <script src="cartPopup.js"></script> 
+        <script src="smoothscroll.js"></script> 
     </body>
+</html>
